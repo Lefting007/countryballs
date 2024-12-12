@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Talks - Countryballs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, blue, purple);
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        nav ul li {
+            float: left;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #111;
+        }
+        .container {
+            padding: 20px;
+        }
+        .orange-button {
+            background-color: orange;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .orange-button.purple {
+            background-color: purple;
+        }
+        .countryballs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .countryball {
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            border-radius: 50%;
+        }
+        #comics, #comments {
+            margin-top: 40px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        form button {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Geo Talks - Countryballs</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#comics">Comics</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to Geo Talks! We explore current geopolitical affairs through the humorous lens of Countryballs, allowing the community to engage and contribute with their own creations.</p>
+            <button class="orange-button" onclick="toggleButtonColor(this)">Click me!</button>
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>This platform discusses global geopolitical issues using Countryballs, a popular meme format. It blends humor with real-world political events to educate and entertain.</p>
+        </section>
+        <section id="blog">
+            <h2>Blog</h2>
+            <p>Check out our latest posts on world affairs!</p>
+        </section>
+        <section id="comics">
+            <h2>Submit Your Countryball Comics</h2>
+            <p>Use the form below to upload your own Countryball comics and share them with the community!</p>
+            <form>
+                <label for="comic-title">Comic Title:</label><br>
+                <input type="text" id="comic-title" name="comic-title" required><br><br>
+                <label for="comic-image">Upload Comic (image):</label><br>
+                <input type="file" id="comic-image" name="comic-image" accept="image/*" required><br><br>
+                <label for="comic-description">Description:</label><br>
+                <textarea id="comic-description" name="comic-description" rows="4" cols="50"></textarea><br><br>
+                <button type="submit">Submit Comic</button>
+            </form>
+        </section>
+        <section id="comments">
+            <h2>Comments</h2>
+            <div id="comment-section">
+                <p>No comments yet. Be the first to discuss the comics!</p>
+            </div>
+            <form>
+                <label for="user-comment">Leave a comment:</label><br>
+                <textarea id="user-comment" name="user-comment" rows="4" cols="50" required></textarea><br><br>
+                <button type="submit">Submit Comment</button>
+            </form>
+        </section>
+        <div class="countryballs">
+            <div class="countryball" style="background-image: url('countryball_usa.png');"></div>
+            <div class="countryball" style="background-image: url('countryball_france.png');"></div>
+            <div class="countryball" style="background-image: url('countryball_germany.png');"></div>
+            <div class="countryball" style="background-image: url('countryball_poland.png');"></div>
+        </div>
+    </div>
+    <script>
+        function toggleButtonColor(button) {
+            button.classList.toggle('purple');
+        }
+    </script>
+</body>
+</html>
